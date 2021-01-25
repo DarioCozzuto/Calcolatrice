@@ -10,19 +10,20 @@
 <script> 
 function calcolaSomma(){
 	//alert("ok");
-	//devo prelevare il numero dal form, quindi per farglielo localizzare gli indico la pagina cosi, con questo ordine: document, successivamente il nome del form, l'id e value, che consiste nel pulsante da premere, il tutto concatenato da .
+	//devo prelevare il numero dal form, quindi per farglielo localizzare gli indico la pagina 
+	//cosi, con questo ordine: document, successivamente il nome del form, l'id e value, che consiste nel pulsante da premere, il tutto concatenato da .
 	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
 	//alert(primoNumeroString);
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
                 // esco dalla funzione CalcolaSottr()
-				return;}
+		return;}
 	
-				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            		{alert("Si possono inserire solo caratteri numerici");
-                	// esco dalla funzione CalcolaSottr()
-                	return;}
+	     if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+		{alert("Si possono inserire solo caratteri numerici");
+		// esco dalla funzione CalcolaSottr()
+		return;}
 	//trasformo la stringa in numero usando parseFloat
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
@@ -40,12 +41,12 @@ function calcolaSottr(){
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
             // esco dalla funzione CalcolaSottr()
-			return;}
+		return;}
 	
-				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            			{alert("Si possono inserire solo caratteri numerici");
-                		// esco dalla funzione CalcolaSottr()
-                		return;}
+	      if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+		 {alert("Si possono inserire solo caratteri numerici");
+		 // esco dalla funzione CalcolaSottr()
+		 return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
 	sottr=primoNumero-secondoNumero;
@@ -56,12 +57,12 @@ function calcolaMoltl(){
 	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
-            {alert("Bisogna inserire entrambi i numeri");
-			return;}
+            	{alert("Bisogna inserire entrambi i numeri");
+		return;}
 	
-				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-                		{alert("Si possono inserire solo caratteri numerici");
-                		return;}
+	       if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+		  	{alert("Si possono inserire solo caratteri numerici");
+                  	return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
 	moltl=primoNumero*secondoNumero;
@@ -73,11 +74,11 @@ function calcolaDivis(){
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
-			return;}
+	    return;}
 	
-				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            			{alert("Si possono inserire solo caratteri numerici");
-                		return;}
+		if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+		   	{alert("Si possono inserire solo caratteri numerici");
+		   	return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
 	divis=primoNumero/secondoNumero;
@@ -93,11 +94,11 @@ function calcolaMedia(){
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
-			return;}
+	    return;}
 	
-				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            			{alert("Si possono inserire solo caratteri numerici");
-                		return;}
+		if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+            	   	{alert("Si possono inserire solo caratteri numerici");
+                   	return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
 	media=(primoNumero+secondoNumero)/2;
@@ -109,17 +110,17 @@ function calcolaMax(){
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
-			return;}
+	    return;}
 	
-				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            			{alert("Si possono inserire solo caratteri numerici");
-                		return;}
+		if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+            	   	{alert("Si possono inserire solo caratteri numerici");
+                   	return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
 	
 	if(primoNumero > secondoNumero)
 		{max=primoNumero;}
-	    	else
+	    		else
 			{max=secondoNumero;}
 	
 	document.calcolatrice.textRisultato.value=max;
@@ -135,34 +136,34 @@ function clean(){
 </script>
 <body>
 	<div id="contenitore">
-	<form name="calcolatrice">
-	<h2>Calcolatrice</h2>
-	<br>
-	<input class="input" type="text" id="textPrimoNumero" placeholder="primo numero">
-	<br>
-	<br>
-	<input class="input" type="text" id="textSecondoNumero" placeholder="secondo numero">
-	<br>
-	<br>
-	<br>
-	<input class="button" type="button" id="buttonSomma" value="+" onClick="calcolaSomma()">
-	<input class="button" type="button" id="buttonSottr" value="-" onClick="calcolaSottr()">
-	<input class="button" type="button" id="buttonMoltl" value="*" onClick="calcolaMoltl()">
-	<input class="button" type="button" id="buttonDivis" value="/" onClick="calcolaDivis()">
-	<br>
-	<br>
-	<input class="button" type="button" id="buttonMedia" value="media" onClick="calcolaMedia()">
-	<input class="button" type="button" id="buttonMax"   value="max" onClick="calcolaMax()">
-	<br>
-	<br>
-	<br>
-	<input disabled class="input" type="text" id="textRisultato" placeholder="risultato"> 
-	<br>
-	<br>
-	<input class="button" type="button" id="buttonClean" value="cancella" onClick="clean()">
-	<br>
-	<br>
-	</form>
+		<form name="calcolatrice">
+		    <h2>Calcolatrice</h2>
+			<br>
+				<input class="input" type="text" id="textPrimoNumero" placeholder="primo numero">
+					<br>
+					<br>
+				<input class="input" type="text" id="textSecondoNumero" placeholder="secondo numero">
+					<br>
+					<br>
+					<br>
+				<input class="button" type="button" id="buttonSomma" value="+" onClick="calcolaSomma()">
+				<input class="button" type="button" id="buttonSottr" value="-" onClick="calcolaSottr()">
+				<input class="button" type="button" id="buttonMoltl" value="*" onClick="calcolaMoltl()">
+				<input class="button" type="button" id="buttonDivis" value="/" onClick="calcolaDivis()">
+					<br>
+					<br>
+				<input class="button" type="button" id="buttonMedia" value="media" onClick="calcolaMedia()">
+				<input class="button" type="button" id="buttonMax"   value="max" onClick="calcolaMax()">
+					<br>
+					<br>
+					<br>
+				<input disabled class="input" type="text" id="textRisultato" placeholder="risultato"> 
+					<br>
+					<br>
+				<input class="button" type="button" id="buttonClean" value="cancella" onClick="clean()">
+			<br>
+			<br>
+		</form>
 	</div>
 </body>
 </html>
