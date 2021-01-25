@@ -57,10 +57,10 @@ function calcolaMoltl(){
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
-				return;}
+			return;}
 	
 				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            {alert("Si possono inserire solo caratteri numerici");
+                {alert("Si possono inserire solo caratteri numerici");
                 return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
@@ -73,10 +73,10 @@ function calcolaDivis(){
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
-				return;}
+			return;}
 	
 				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            {alert("Si possono inserire solo caratteri numerici");
+            	{alert("Si possono inserire solo caratteri numerici");
                 return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
@@ -93,10 +93,10 @@ function calcolaMedia(){
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
-				return;}
+			return;}
 	
 				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            {alert("Si possono inserire solo caratteri numerici");
+            	{alert("Si possono inserire solo caratteri numerici");
                 return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
@@ -109,18 +109,18 @@ function calcolaMax(){
 	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
 	if (primoNumeroString==""||secondoNumeroString=="")
             {alert("Bisogna inserire entrambi i numeri");
-				return;}
+			return;}
 	
 				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
-            {alert("Si possono inserire solo caratteri numerici");
+            	{alert("Si possono inserire solo caratteri numerici");
                 return;}
 	primoNumero=parseFloat(primoNumeroString);
 	secondoNumero=parseFloat(secondoNumeroString);
 	
 	if(primoNumero > secondoNumero)
 		{max=primoNumero;}
-	else
-		{max=secondoNumero;}
+	    	else
+			{max=secondoNumero;}
 	
 	document.calcolatrice.textRisultato.value=max;
 }
