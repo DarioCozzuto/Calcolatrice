@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+<head>
+<link href="style.css" type="text/css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;900&display=swap" rel="stylesheet"> 
+<meta charset="utf-8">
+<title>calcolatrice</title>
+</head>
+<script> 
+function calcolaSomma(){
+	//alert("ok");
+	//devo prelevare il numero dal form, quindi per farglielo localizzare gli indico la pagina cosi, con questo ordine: document, successivamente il nome del form, l'id e value, che consiste nel pulsante da premere, il tutto concatenato da .
+	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
+	//alert(primoNumeroString);
+	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
+	if (primoNumeroString==""||secondoNumeroString=="")
+            {alert("Bisogna inserire entrambi i numeri");
+                // esco dalla funzione CalcolaSottr()
+				return;}
+	
+				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+            		{alert("Si possono inserire solo caratteri numerici");
+                	// esco dalla funzione CalcolaSottr()
+                	return;}
+	//trasformo la stringa in numero usando parseFloat
+	primoNumero=parseFloat(primoNumeroString);
+	secondoNumero=parseFloat(secondoNumeroString);
+	
+	//elaborazione
+	somma=primoNumero+secondoNumero;
+	
+	//risultato elaborazione nell'input textRisultato
+	document.calcolatrice.textRisultato.value=somma;
+}
+	
+function calcolaSottr(){
+	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
+	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
+	if (primoNumeroString==""||secondoNumeroString=="")
+            {alert("Bisogna inserire entrambi i numeri");
+            // esco dalla funzione CalcolaSottr()
+			return;}
+	
+				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+            			{alert("Si possono inserire solo caratteri numerici");
+                		// esco dalla funzione CalcolaSottr()
+                		return;}
+	primoNumero=parseFloat(primoNumeroString);
+	secondoNumero=parseFloat(secondoNumeroString);
+	sottr=primoNumero-secondoNumero;
+	document.calcolatrice.textRisultato.value=sottr;
+}
+	
+function calcolaMoltl(){
+	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
+	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
+	if (primoNumeroString==""||secondoNumeroString=="")
+            {alert("Bisogna inserire entrambi i numeri");
+			return;}
+	
+				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+                		{alert("Si possono inserire solo caratteri numerici");
+                		return;}
+	primoNumero=parseFloat(primoNumeroString);
+	secondoNumero=parseFloat(secondoNumeroString);
+	moltl=primoNumero*secondoNumero;
+	document.calcolatrice.textRisultato.value=moltl;
+}	
+
+function calcolaDivis(){
+	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
+	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
+	if (primoNumeroString==""||secondoNumeroString=="")
+            {alert("Bisogna inserire entrambi i numeri");
+			return;}
+	
+				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+            			{alert("Si possono inserire solo caratteri numerici");
+                		return;}
+	primoNumero=parseFloat(primoNumeroString);
+	secondoNumero=parseFloat(secondoNumeroString);
+	divis=primoNumero/secondoNumero;
+	document.calcolatrice.textRisultato.value=divis;
+	
+	if(primoNumero==0 || secondoNumero==0)                  
+		{document.calcolatrice.textRisultato.value=" ";
+		alert("Il numero non si puo' dividere per 0");}
+}
+	
+function calcolaMedia(){
+	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
+	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
+	if (primoNumeroString==""||secondoNumeroString=="")
+            {alert("Bisogna inserire entrambi i numeri");
+			return;}
+	
+				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+            			{alert("Si possono inserire solo caratteri numerici");
+                		return;}
+	primoNumero=parseFloat(primoNumeroString);
+	secondoNumero=parseFloat(secondoNumeroString);
+	media=(primoNumero+secondoNumero)/2;
+	document.calcolatrice.textRisultato.value=media;
+}
+	
+function calcolaMax(){
+	primoNumeroString=document.calcolatrice.textPrimoNumero.value;
+	secondoNumeroString=document.calcolatrice.textSecondoNumero.value;
+	if (primoNumeroString==""||secondoNumeroString=="")
+            {alert("Bisogna inserire entrambi i numeri");
+			return;}
+	
+				if (isNaN(primoNumeroString)||isNaN(secondoNumeroString))
+            			{alert("Si possono inserire solo caratteri numerici");
+                		return;}
+	primoNumero=parseFloat(primoNumeroString);
+	secondoNumero=parseFloat(secondoNumeroString);
+	
+	if(primoNumero > secondoNumero)
+		{max=primoNumero;}
+	    	else
+			{max=secondoNumero;}
+	
+	document.calcolatrice.textRisultato.value=max;
+}
+	
+function clean(){
+	document.calcolatrice.textPrimoNumero.value=" ";
+	document.calcolatrice.textSecondoNumero.value=" ";
+	document.calcolatrice.textRisultato.value=" ";
+}
+		   
+	   
+</script>
+<body>
+	<div id="contenitore">
+	<form name="calcolatrice">
+	<h2>Calcolatrice</h2>
+	<br>
+	<input class="input" type="text" id="textPrimoNumero" placeholder="primo numero">
+	<br>
+	<br>
+	<input class="input" type="text" id="textSecondoNumero" placeholder="secondo numero">
+	<br>
+	<br>
+	<br>
+	<input class="button" type="button" id="buttonSomma" value="+" onClick="calcolaSomma()">
+	<input class="button" type="button" id="buttonSottr" value="-" onClick="calcolaSottr()">
+	<input class="button" type="button" id="buttonMoltl" value="*" onClick="calcolaMoltl()">
+	<input class="button" type="button" id="buttonDivis" value="/" onClick="calcolaDivis()">
+	<br>
+	<br>
+	<input class="button" type="button" id="buttonMedia" value="media" onClick="calcolaMedia()">
+	<input class="button" type="button" id="buttonMax"   value="max" onClick="calcolaMax()">
+	<br>
+	<br>
+	<br>
+	<input disabled class="input" type="text" id="textRisultato" placeholder="risultato"> 
+	<br>
+	<br>
+	<input class="button" type="button" id="buttonClean" value="cancella" onClick="clean()">
+	<br>
+	<br>
+	</form>
+	</div>
+</body>
+</html>
+
+
