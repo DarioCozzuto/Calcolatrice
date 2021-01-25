@@ -2,4 +2,4 @@
 
 https://dariocozzuto.github.io/Calcolatrice/
 
-A calculator developed with HTML-JAVASCRIPT-CSS
+Calculator developed with HTML-JAVASCRIPT-CSS
